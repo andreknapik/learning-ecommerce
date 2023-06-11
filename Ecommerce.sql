@@ -74,3 +74,13 @@ CREATE TABLE cart_item (
   product_id bigint NOT NULL REFERENCES product(product_id),
   qty numeric(19,4) NOT NULL
 );
+
+CREATE TABLE expenses (
+  id SERIAL PRIMARY KEY,
+  credor VARCHAR NOT NULL,
+  data_vencimento DATE NOT NULL,
+  data_pagamento DATE,
+  valor DECIMAL(10, 2) NOT NULL,
+  descricao VARCHAR,
+  status VARCHAR NOT NULL DEFAULT 'Pendente'
+);
